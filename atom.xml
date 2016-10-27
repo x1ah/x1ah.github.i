@@ -447,10 +447,10 @@
     <link href="http://x1ah.com/2016/05/18/backup_your_linux/"/>
     <id>http://x1ah.com/2016/05/18/backup_your_linux/</id>
     <published>2016-05-18T16:54:05.000Z</published>
-    <updated>2016-10-27T16:12:19.000Z</updated>
+    <updated>2016-10-27T16:16:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>居安思危，时刻保持警惕，做好最坏打算，定时备份你的系统，以防突发情况.</p>
-<p>“<strong>一切皆文件</strong>“ 是 Unix / Linux 的基本哲学之一，正是得益与这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.</p>
+<p>“<strong>一切皆文件</strong>“ 是 Unix / Linux 的基本哲学思想之一，正是得益于这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.</p>
 <a id="more"></a>
 <h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><ul>
 <li>插上移动硬盘/U盘并自动挂载(普遍情况下会自动)在 <code>/media/&lt;yourname&gt;/&lt;you_disk_name&gt;</code> 下，或者要备份到某个目录下而不是移动存储设备。</li>
@@ -472,7 +472,7 @@
     <summary type="html">
     
       &lt;p&gt;居安思危，时刻保持警惕，做好最坏打算，定时备份你的系统，以防突发情况.&lt;/p&gt;
-&lt;p&gt;“&lt;strong&gt;一切皆文件&lt;/strong&gt;“ 是 Unix / Linux 的基本哲学之一，正是得益与这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.&lt;/p&gt;
+&lt;p&gt;“&lt;strong&gt;一切皆文件&lt;/strong&gt;“ 是 Unix / Linux 的基本哲学思想之一，正是得益于这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.&lt;/p&gt;
     
     </summary>
     
