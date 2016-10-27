@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://x1ah.com/"/>
-  <updated>2016-10-21T12:03:34.000Z</updated>
+  <updated>2016-10-21T12:02:00.000Z</updated>
   <id>http://x1ah.com/</id>
   
   <author>
@@ -14,26 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Python 与 WebQQ 协议实现QQ机器人</title>
-    <link href="http://x1ah.com/2016/08/25/Python-WebQQ-Protocol-QQRobot/"/>
-    <id>http://x1ah.com/2016/08/25/Python-WebQQ-Protocol-QQRobot/</id>
-    <published>2016-08-25T05:45:03.000Z</published>
-    <updated>2016-10-21T12:03:34.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="玩具" scheme="http://x1ah.com/categories/%E7%8E%A9%E5%85%B7/"/>
-    
-    
-      <category term="Python" scheme="http://x1ah.com/tags/Python/"/>
-    
-      <category term="Lab" scheme="http://x1ah.com/tags/Lab/"/>
-    
-  </entry>
   
   <entry>
     <title>Python logging 模块小记</title>
@@ -463,69 +443,36 @@
   </entry>
   
   <entry>
-    <title>Linux 系统备份与还原</title>
-    <link href="http://x1ah.com/2016/05/18/backup-linux/"/>
-    <id>http://x1ah.com/2016/05/18/backup-linux/</id>
+    <title>备份你的 *NIX 系统</title>
+    <link href="http://x1ah.com/2016/05/18/backup_your_linux/"/>
+    <id>http://x1ah.com/2016/05/18/backup_your_linux/</id>
     <published>2016-05-18T16:54:05.000Z</published>
-    <updated>2016-10-21T12:01:38.000Z</updated>
+    <updated>2016-10-27T16:12:19.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>引用<br><a href="http://www.liusuping.com/ubuntu-linux/linux-tar-backup-restore_8484.html" target="_blank" rel="external">刘苏平的博客</a><br><a href="http://blog.163.com/sg_liao/blog/static/29577083200911752514269/" target="_blank" rel="external">落花往事的日志</a></p>
-</blockquote>
+    <content type="html"><![CDATA[<p>居安思危，时刻保持警惕，做好最坏打算，定时备份你的系统，以防突发情况.</p>
+<p>“<strong>一切皆文件</strong>“ 是 Unix / Linux 的基本哲学之一，正是得益与这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.</p>
 <a id="more"></a>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><h3 id="需要备份"><a href="#需要备份" class="headerlink" title="需要备份"></a>需要备份</h3><ul>
-<li>/etc<ul>
-<li>包含所有核心配置文件。这其中包括网络配置、系统名称、防火墙规则、用户、组，以及其他全局系统项。</li>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><ul>
+<li>插上移动硬盘/U盘并自动挂载(普遍情况下会自动)在 <code>/media/&lt;yourname&gt;/&lt;you_disk_name&gt;</code> 下，或者要备份到某个目录下而不是移动存储设备。</li>
+<li>切换至根目录<code>cd /</code></li>
+<li>开始备份(比如备份至移动存储设备) <code>sudo tar -cvpzf /media/&lt;yourname&gt;/&lt;backup_name&gt;.tgz --exclude=/proc --exclude=/lost+found --exclude=/media --exclude=/mnt --exclude=/sys /</code> 可能需要一点时间，等待之.<ul>
+<li><code>--exclude=/&lt;PATH&gt;</code> 之后的PATH为备份时排除的目录，即这些不需要备份，我一般把上面五个目录都给排除了。</li>
 </ul>
 </li>
-<li>/var<ul>
-<li>包含系统守护进程（服务）所使用的信息，包括 DNS 配置、DHCP 租期、邮件缓冲文件、HTTP 服务器文件、db2 实例配置，等等。</li>
+<li>上面的 <code>&lt;yourname&gt;/&lt;backup_name&gt;.tgz</code> 可换成别的目录，对应也就备份至该目录了，Hint: 备份成<code>.tgz</code>格式就行了.也方便还原.</li>
+<li>得到了<code>xxx.tgz</code>即你的系统备份.</li>
 </ul>
-</li>
-<li>/home<ul>
-<li>包含所有用户的默认用户主目录。这包括他们的个人设置、已下载的文件和用户不希望失去的其他信息。</li>
-</ul>
-</li>
-<li>/root<ul>
-<li>是根（root）用户的主目录。</li>
-</ul>
-</li>
-<li>/opt<ul>
-<li>是安装许多非系统文件的地方。IBM 软件就安装在这里。OpenOffice、JDK 和其他软件在默认情况下也安装在这里。</li>
-</ul>
-</li>
-</ul>
-<h3 id="可选项"><a href="#可选项" class="headerlink" title="可选项"></a>可选项</h3><ul>
-<li>/proc<ul>
-<li>应该永远不要备份这个目录。它不是一个真实的文件系统，而是运行内核和环境的虚拟化视图。它包括诸如 /proc/kcore 这样的文件，这个文件是整个运行内存的虚拟视图。备份这些文件只是在浪费资源。</li>
-</ul>
-</li>
-<li>/dev<ul>
-<li>包含硬件设备的文件表示。如果计划还原到一个空白的系统，那就可以备份 /dev。然而，如果计划还原到一个已安装的 Linux 系统，那么备份 /dev 是没有必要的。</li>
-</ul>
-</li>
-</ul>
-<h3 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h3><ul>
-<li><code>tar -cvpzf /media/xiah/WD_LINUX/linux_bak.tgz --exclude=/proc --exclude=/lost+found --exclude=/media --exclude=/mnt /</code><ul>
-<li><code>--exclude</code>为排除的不需要备份选项。</li>
-</ul>
-</li>
-<li>等待复制完就行了。</li>
-</ul>
-<h2 id="还原"><a href="#还原" class="headerlink" title="还原"></a>还原</h2><h3 id="从备份文件中还原"><a href="#从备份文件中还原" class="headerlink" title="从备份文件中还原"></a>从备份文件中还原</h3><ul>
-<li><p><code>tar -xvpzf  /media/xiah/WD_LINUX/linux_bak -C /</code></p>
-</li>
-<li><p>参数x是告诉tar程序解压缩备份文件。 -C <directory> 参数是指定tar程序解压缩到的目录。 ( 在本例中是/ )，这会花一段时间。等它完成了，就有了一个完全恢复的Linux系统！</directory></p>
-</li>
-<li>恢复完备份文件之后，重新创建剔除的目录： ( /proc, /lost+found, /mnt, 等等。)</li>
+<h3 id="还原"><a href="#还原" class="headerlink" title="还原"></a>还原</h3><ul>
+<li>假如你的系统备份文件为<code>/path/backup.tgz</code></li>
+<li><code>cd / &amp;&amp; sudo tar -xvpzf /path/backup.tgz -C /</code> 可能需要一点时间，等待之. 完成后再新建之前排除的目录(<code>sudo mkdir /proc /media /mnt /sys</code> etc….)</li>
+<li>重启，还原成功.</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;引用&lt;br&gt;&lt;a href=&quot;http://www.liusuping.com/ubuntu-linux/linux-tar-backup-restore_8484.html&quot;&gt;刘苏平的博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.163.com/sg_liao/blog/static/29577083200911752514269/&quot;&gt;落花往事的日志&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;p&gt;居安思危，时刻保持警惕，做好最坏打算，定时备份你的系统，以防突发情况.&lt;/p&gt;
+&lt;p&gt;“&lt;strong&gt;一切皆文件&lt;/strong&gt;“ 是 Unix / Linux 的基本哲学之一，正是得益与这一点，使得我们的系统备份工作变得异常简单，既然一切皆文件，那么把所有文件备份一下就行了.&lt;/p&gt;
     
     </summary>
     
