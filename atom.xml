@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://x1ah.com/"/>
-  <updated>2016-11-06T15:46:15.000Z</updated>
+  <updated>2016-11-06T15:51:26.000Z</updated>
   <id>http://x1ah.com/</id>
   
   <author>
@@ -20,11 +20,10 @@
     <link href="http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/"/>
     <id>http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/</id>
     <published>2016-11-06T01:44:41.000Z</published>
-    <updated>2016-11-06T15:46:15.000Z</updated>
+    <updated>2016-11-06T15:51:26.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>Keep It Simple, Stupid!</p>
-</blockquote>
+    <content type="html"><![CDATA[<p>Keep It Simple, Stupid!</p>
+<a id="more"></a>
 <p>前阵子因为我的Ubuntu出了点问题，也懒得去fix，于是推了换成了Elementary OS Loki，又配了一遍环境。每次换系统最头疼的大概就是得重新搭建自己的编程环境，备份恢复各种数据文件代码仓库，折腾次数多了自然也有了自己的一套方案。以下内容适用基于 Ubuntu 的系统，演示环境是英文Elementary OS Loki.中文一直没有解决Applicatioins面板搜索无效Bug.</p>
 <h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>有一习惯，电脑里除了需要用的东西，代码，几乎不放东西，所以，240G的盘也才用了60+G，视频照片之类统统放移动硬盘，几乎所有代码都放<a href="https://github.com/x1ah" target="_blank" rel="external">GitHub</a>了，备份<code>～/.ssh/</code>目录,系统也定时备份，防止突发情况。备份系统之前有<a href="http://x1ah.cn/2016/05/18/backup_your_linux/" target="_blank" rel="external">一篇笔记</a>,</p>
 <h2 id="软件-开发工具"><a href="#软件-开发工具" class="headerlink" title="软件,开发工具"></a>软件,开发工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>首先肯定是Git了,几乎离不开Git和GitHub了.习惯先把备份的<code>.ssh/</code>目录先恢复，没有就掠过。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure></p>
@@ -67,10 +66,7 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;Keep It Simple, Stupid!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;前阵子因为我的Ubuntu出了点问题，也懒得去fix，于是推了换成了Elementary OS Loki，又配了一遍环境。每次换系统最头疼的大概就是得重新搭建
+      &lt;p&gt;Keep It Simple, Stupid!&lt;/p&gt;
     
     </summary>
     
