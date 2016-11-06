@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://x1ah.com/"/>
-  <updated>2016-10-21T12:02:00.000Z</updated>
+  <updated>2016-11-06T15:46:15.000Z</updated>
   <id>http://x1ah.com/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编程环境搭建(ElementaryOS)</title>
+    <link href="http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/"/>
+    <id>http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/</id>
+    <published>2016-11-06T01:44:41.000Z</published>
+    <updated>2016-11-06T15:46:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>Keep It Simple, Stupid!</p>
+</blockquote>
+<p>前阵子因为我的Ubuntu出了点问题，也懒得去fix，于是推了换成了Elementary OS Loki，又配了一遍环境。每次换系统最头疼的大概就是得重新搭建自己的编程环境，备份恢复各种数据文件代码仓库，折腾次数多了自然也有了自己的一套方案。以下内容适用基于 Ubuntu 的系统，演示环境是英文Elementary OS Loki.中文一直没有解决Applicatioins面板搜索无效Bug.</p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>有一习惯，电脑里除了需要用的东西，代码，几乎不放东西，所以，240G的盘也才用了60+G，视频照片之类统统放移动硬盘，几乎所有代码都放<a href="https://github.com/x1ah" target="_blank" rel="external">GitHub</a>了，备份<code>～/.ssh/</code>目录,系统也定时备份，防止突发情况。备份系统之前有<a href="http://x1ah.cn/2016/05/18/backup_your_linux/" target="_blank" rel="external">一篇笔记</a>,</p>
+<h2 id="软件-开发工具"><a href="#软件-开发工具" class="headerlink" title="软件,开发工具"></a>软件,开发工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>首先肯定是Git了,几乎离不开Git和GitHub了.习惯先把备份的<code>.ssh/</code>目录先恢复，没有就掠过。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure></p>
+<h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure>
+<p>强烈推荐一份<a href="https://github.com/wklken/k-vim" target="_blank" rel="external">Vim配置 k-vim</a>,之后YCM一般都需要自行编译安装，参考<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">YCK文档</a>,比较耗时</p>
+<h3 id="Gdebi"><a href="#Gdebi" class="headerlink" title="Gdebi"></a>Gdebi</h3><p>用来更方便安装deb包的工具，会自行解决依赖问题，不用自己找依赖balabala,之前用<code>sudo apt-get install -f</code>也能解决大部分依赖问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install gdebi</div></pre></td></tr></table></figure></p>
+<h3 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h3><p>Chrome 可以自行添加源安装，这里上传到网盘里直接下<a href="http://pan.baidu.com/s/1pLgxZPT" target="_blank" rel="external">Google-Chrome-stable-54</a>,密码2bs9<br>之后直接用<code>gdebi</code>安装<code>sudo gdebi ***.deb</code>一路确定，Gdebi 会自行安装依赖包，</p>
+<h3 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h3><p>不能自由上网还怎么愉快的写代码……不推荐安装GUI版的Shadowsocks，使用太麻烦.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python-dev python3-dev python-pip</div><div class="line">$ sudo pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<p>测试一下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sslocal --help</div></pre></td></tr></table></figure></p>
+<p>然后需要准备一份自己的shadowsocks配置，<a href="http://www.ishadowsocks.org/" target="_blank" rel="external">这里</a>有一个免费的ss帐号提供站，速度还可以的，六小时更换一次密码，可以自己写个爬虫脚本定时更新本地的。<br><a href="https://aitanlu.com/ubuntu-shadowsocks-ke-hu-duan-pei-zhi.html" target="_blank" rel="external">这里有一篇教程</a>写的很详细，直接看这个教程吧。</p>
+<h3 id="fcitx"><a href="#fcitx" class="headerlink" title="fcitx"></a>fcitx</h3><p>输入法推荐用Fcitx框架代替系统的Ibus</p>
+<ul>
+<li><p>卸载ibus并安装fcitx：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get remove ibus</div><div class="line">$ sudo apt-fast install fcitx fcitx-config-gtk</div><div class="line">$ sudo apt-get install fcitx-table-all</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置默认输入法管理器为fcitx：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install im-switch</div><div class="line">$ im-switch -s fcitx -z default</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>到这里，fcitx已经安装好了，下面可以选择就很多了，如果是双拼，直接就能在<code>fcitx-configtool</code>选择安装了，或者选择更容易崩溃但是更强大的<a href="http://pinyin.sogou.com/linux/?r=pinyin" target="_blank" rel="external">搜狗输入法</a>，下对应deb包用gdebi安装.</p>
+<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><p>感谢网易，出了这么一款音乐软件，还是跨平台的..<a href="http://music.163.com/#/download" target="_blank" rel="external">NetEase Music</a></p>
+<h3 id="Zsh-Tmux"><a href="#Zsh-Tmux" class="headerlink" title="Zsh, Tmux"></a>Zsh, Tmux</h3><p><a href="">Zsh</a> 是一款功能强大终端（shell）软件，既可以作为一个交互式终端，也可以作为一个脚本解释器。它在兼容 Bash 的同时 (默认不兼容，除非设置成 emulate sh) 还有提供了很多改进，可定制化很高， <a href="https://tmux.github.io/" target="_blank" rel="external">Tmux</a> 也是一款终端神器，分屏多窗口多界面，以及有效防止ssh断连情况下丢失当前状态，几乎完美的解决方案。zsh配置方案推荐<a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">Oh-My-Zsh</a>，这几乎是人尽皆知的了。Tmux推荐<a href="https://github.com/tony/tmux-config" target="_blank" rel="external">这个配置</a>,配置方法在文档都有。</p>
+<h3 id="pyenv-virtualenv"><a href="#pyenv-virtualenv" class="headerlink" title="pyenv, virtualenv"></a>pyenv, virtualenv</h3><p>Python开发使用的工具，文档在这里<a href="https://github.com/yyuu/pyenv" target="_blank" rel="external">pyenv</a>, <a href="https://github.com/pypa/virtualenv" target="_blank" rel="external">virtualenv</a></p>
+<h3 id="IDE-Editor"><a href="#IDE-Editor" class="headerlink" title="IDE/Editor"></a>IDE/Editor</h3><ul>
+<li><strong>Sublime</strong>): 自带的scratch/gedit也能用，但是用来写代码还是稍逊一筹，文档<a href="https://www.sublimetext.com/3" target="_blank" rel="external">在这</a>,之后就可以自行谷歌搜一些改配置，装插件的教程。。</li>
+<li><strong>Pycharm</strong>: 与其说Pycharm不如说Jet Brain 家族工具.教育邮箱认证就能免费用全家桶了(PS:如果有需求lz可以提供几个认证过的帐号或LICENCE)，<a href="https://www.jetbrains.com/" target="_blank" rel="external">下载</a></li>
+<li><strong>Atom</strong>: GitHub 的开源作品，很不错的text editor<a href="https://atom.io/" target="_blank" rel="external">(A hackable text editor for the 21st Century)</a></li>
+<li><strong>这些工具都自行取舍ba</strong></li>
+</ul>
+<h2 id="小工具推荐以及系统美化"><a href="#小工具推荐以及系统美化" class="headerlink" title="小工具推荐以及系统美化"></a>小工具推荐以及系统美化</h2><h3 id="终端配色，主题"><a href="#终端配色，主题" class="headerlink" title="终端配色，主题"></a>终端配色，主题</h3><p>强烈推荐<a href="https://github.com/Mayccoll/Gogh" target="_blank" rel="external">Gogh</a>，换配色从未如此简单</p>
+<h3 id="Consolas-字体"><a href="#Consolas-字体" class="headerlink" title="Consolas 字体"></a>Consolas 字体</h3><p><a href="http://www.mycode.net.cn/platform/741.html" target="_blank" rel="external">这里</a>有一篇挺详细的教程,搭配 Solarsize dark 配色，一直在用.</p>
+<h3 id="apt-fast"><a href="#apt-fast" class="headerlink" title="apt-fast"></a>apt-fast</h3><p>这是一个跟<code>apt-get</code>功能类似的一个工具，通过多线程下载的方式来加快<code>apt-get</code>下载速度，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository ppa:saiarcot895/myppa</div><div class="line">$ sudo apt-get update</div><div class="line">$ sudo apt-get -y install apt-fast</div></pre></td></tr></table></figure></p>
+<p>如果上面会提示<code>add-apt-repository command not found</code>，安装它就成了<code>apt-get install software-properties-common</code><br>安装完了更新源体验一下吧：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-fast update</div></pre></td></tr></table></figure></p>
+<h3 id="Elementary-tweaks-ubuntu-tweaks"><a href="#Elementary-tweaks-ubuntu-tweaks" class="headerlink" title="Elementary-tweaks / ubuntu-tweaks"></a>Elementary-tweaks / ubuntu-tweaks</h3><p>系统工具，Elementary-tweaks可以提供很多系统设置里没有的选项，<a href="https://github.com/elementary-tweaks/elementary-tweaks" target="_blank" rel="external">这里安装文档</a>.对于Ubuntu，安装<a href="https://github.com/tualatrix/ubuntu-tweak/releases" target="_blank" rel="external">ubuntu-tweaks</a></p>
+<h3 id="typespeed"><a href="#typespeed" class="headerlink" title="typespeed"></a>typespeed</h3><p>一款终端打字练习软件，支持English, German, French, Italian等等，甚至还有Unix command.安装也极为简单，直接<code>sudo apt-get install typespeed</code></p>
+<h3 id="wireshark-Postman"><a href="#wireshark-Postman" class="headerlink" title="wireshark / Postman"></a>wireshark / Postman</h3><p>跨平台抓包工具，非常强大,需要一定专业知识。<a href="https://www.wireshark.org/" target="_blank" rel="external">官网在这儿</a>,与之类似的有一款Chrome Apps<a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon" target="_blank" rel="external">Postman</a></p>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>出了这些，还有很多没有推荐，另外，Chrome 有很多好玩儿的插件，之后再继续更新Chrome 插件.</p>
+<p>End.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Keep It Simple, Stupid!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前阵子因为我的Ubuntu出了点问题，也懒得去fix，于是推了换成了Elementary OS Loki，又配了一遍环境。每次换系统最头疼的大概就是得重新搭建
+    
+    </summary>
+    
+      <category term="技术" scheme="http://x1ah.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="http://x1ah.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Python logging 模块小记</title>
