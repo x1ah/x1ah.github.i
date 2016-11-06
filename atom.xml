@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://x1ah.com/"/>
-  <updated>2016-11-06T15:53:02.000Z</updated>
+  <updated>2016-11-06T16:06:39.000Z</updated>
   <id>http://x1ah.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/"/>
     <id>http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/</id>
     <published>2016-11-06T01:44:41.000Z</published>
-    <updated>2016-11-06T15:53:02.000Z</updated>
+    <updated>2016-11-06T16:06:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>Keep It Simple, Stupid!</p>
 <a id="more"></a>
@@ -60,8 +60,9 @@
 <h3 id="Elementary-tweaks-ubuntu-tweaks"><a href="#Elementary-tweaks-ubuntu-tweaks" class="headerlink" title="Elementary-tweaks / ubuntu-tweaks"></a>Elementary-tweaks / ubuntu-tweaks</h3><p>系统工具，Elementary-tweaks可以提供很多系统设置里没有的选项，<a href="https://github.com/elementary-tweaks/elementary-tweaks" target="_blank" rel="external">这里安装文档</a>.对于Ubuntu，安装<a href="https://github.com/tualatrix/ubuntu-tweak/releases" target="_blank" rel="external">ubuntu-tweaks</a></p>
 <h3 id="typespeed"><a href="#typespeed" class="headerlink" title="typespeed"></a>typespeed</h3><p>一款终端打字练习软件，支持English, German, French, Italian等等，甚至还有Unix command.安装也极为简单，直接<code>sudo apt-get install typespeed</code></p>
 <h3 id="wireshark-Postman"><a href="#wireshark-Postman" class="headerlink" title="wireshark / Postman"></a>wireshark / Postman</h3><p>跨平台抓包工具，非常强大,需要一定专业知识。<a href="https://www.wireshark.org/" target="_blank" rel="external">官网在这儿</a>,与之类似的有一款Chrome Apps<a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?utm_source=chrome-ntp-icon" target="_blank" rel="external">Postman</a></p>
-<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>出了这些，还有很多没有推荐，另外，Chrome 有很多好玩儿的插件，之后再继续更新Chrome 插件.</p>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>除了这些，还有很多没有推荐，另外，Chrome 有很多好玩儿的插件，之后再继续更新Chrome 插件.</p>
 <p>End.</p>
+<p><img src="http://ww2.sinaimg.cn/large/005NaGmtjw1f9iu4gzi77j318g0p0k12.jpg" alt=""></p>
 ]]></content>
     
     <summary type="html">
