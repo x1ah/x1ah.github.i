@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://x1ah.com/"/>
-  <updated>2016-11-06T16:06:39.000Z</updated>
+  <updated>2016-12-17T01:36:41.000Z</updated>
   <id>http://x1ah.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/"/>
     <id>http://x1ah.com/2016/11/05/Programing-Environment-ElementaryOS/</id>
     <published>2016-11-06T01:44:41.000Z</published>
-    <updated>2016-11-06T16:06:39.000Z</updated>
+    <updated>2016-12-17T01:36:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>Keep It Simple, Stupid!</p>
 <a id="more"></a>
@@ -28,7 +28,7 @@
 <h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>有一习惯，电脑里除了需要用的东西，代码，几乎不放东西，所以，240G的盘也才用了60+G，视频照片之类统统放移动硬盘，几乎所有代码都放<a href="https://github.com/x1ah" target="_blank" rel="external">GitHub</a>了，备份<code>～/.ssh/</code>目录,系统也定时备份，防止突发情况。备份系统之前有<a href="http://x1ah.cn/2016/05/18/backup_your_linux/" target="_blank" rel="external">一篇笔记</a>,</p>
 <h2 id="软件-开发工具"><a href="#软件-开发工具" class="headerlink" title="软件,开发工具"></a>软件,开发工具</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>首先肯定是Git了,几乎离不开Git和GitHub了.习惯先把备份的<code>.ssh/</code>目录先恢复，没有就掠过。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure></p>
 <h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure>
-<p>强烈推荐一份<a href="https://github.com/wklken/k-vim" target="_blank" rel="external">Vim配置 k-vim</a>,之后YCM一般都需要自行编译安装，参考<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">YCK文档</a>,比较耗时</p>
+<p>强烈推荐一份<a href="https://github.com/wklken/k-vim" target="_blank" rel="external">Vim配置 k-vim</a>,之后YCM一般都需要自行编译安装，参考<a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">YCM文档</a>,比较耗时</p>
 <h3 id="Gdebi"><a href="#Gdebi" class="headerlink" title="Gdebi"></a>Gdebi</h3><p>用来更方便安装deb包的工具，会自行解决依赖问题，不用自己找依赖balabala,之前用<code>sudo apt-get install -f</code>也能解决大部分依赖问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install gdebi</div></pre></td></tr></table></figure></p>
 <h3 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a>Chrome</h3><p>Chrome 可以自行添加源安装，这里上传到网盘里直接下<a href="http://pan.baidu.com/s/1pLgxZPT" target="_blank" rel="external">Google-Chrome-stable-54</a>,密码2bs9<br>之后直接用<code>gdebi</code>安装<code>sudo gdebi ***.deb</code>一路确定，Gdebi 会自行安装依赖包，</p>
 <h3 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h3><p>不能自由上网还怎么愉快的写代码……不推荐安装GUI版的Shadowsocks，使用太麻烦.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python-dev python3-dev python-pip</div><div class="line">$ sudo pip install shadowsocks</div></pre></td></tr></table></figure></p>
