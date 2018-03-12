@@ -150,6 +150,7 @@ keywords: Python, 面试
 
 # 数据结构，算法
 - 层次遍历二叉树用什么方法？
+
 ```python
 # coding: utf-8
 
@@ -193,6 +194,7 @@ if __name__ == "__main__":
 
 - 如何判断两个单链表是否相交于某个节点，包括 X 型，Y 型，V 型。
     - X 型不可能存在，一个单链表节点不存在两个不同的后继。
+
 ```python
 # 存在 V 型和 Y 型，如果交叉，则最后一个节点肯定是相同的，故直接从最后一个节点进行反向遍历。
 # 反转单链表
@@ -252,6 +254,7 @@ point(ra, rb)
 ![](http://ww1.sinaimg.cn/large/005NaGmtly1fenoomcn03j30iz07874f.jpg)
 
 - *手写快速排序。画画堆排序的原理及过程。*
+
 ```python
 # 快速排序，lz 当时写的比较复杂，但是是最常见的写法（紧张导致有几个小bug），如下
 def quick_sort(lst, start, stop):
@@ -275,6 +278,7 @@ def quick_sort(lst, start, stop):
 ```
 
 之后面试官 [akun](https://github.com/akun) 大哥给了个特别简洁的写法，三路复用，地址在 [Gist](https://gist.github.com/akun/d90998068f4e1f3eb169)
+
 ```python
 def qsort(alist):
     """
@@ -396,6 +400,7 @@ def qsort(alist):
 - 一条语句求 0 - 999999 内能被 7 整除的所有数的和。
 - 实现一个链表结构，要求其插入第一个节点，删除最后一个节点的复杂度为 O(1)。
 - 实现一个 `retry` 装饰器，使用如下：
+
 ```python
 # 可以指定重试次数，直到函数返回正确结果。
 @retry(retries=3)
@@ -406,7 +411,9 @@ def func(*args, **kw):
     except:
         return False
 ```
+
 大概可以像下面这样写，
+
 ```python
 from functools import wraps
 
